@@ -1,5 +1,5 @@
 # Start with a base image containing Node.js
-FROM node:14-alpine
+FROM node:latest
 
 # Create app directory in Docker
 WORKDIR /usr/src/app
