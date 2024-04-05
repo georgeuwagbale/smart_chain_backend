@@ -13,7 +13,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       port: 5432,
       username: 'my_user',
       database: 'my_database',
-      entities: ['dist/**/*.entities{.ts,.js}'],
+      entities: ['dist/modules/**/*.entity{.ts,.js}'],
       synchronize: true,
     }),
     TasksModule,

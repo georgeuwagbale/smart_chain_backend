@@ -4,6 +4,7 @@ import { Repository } from 'typeorm';
 import { Tasks } from './entities/task.entity';
 import { CreateTaskDto } from './dtos/CreateTaskDto';
 import { UpdateTaskDto } from './dtos/UpdateTaskDto';
+import { TaskStatus } from './entities/TaskStatus';
 
 @Injectable()
 export class TasksService {
@@ -13,6 +14,7 @@ export class TasksService {
 
     async create (createTaskDto: CreateTaskDto) {
         const task = this.tasksRepository.create(createTaskDto);
+        task.status = TaskStatus.OPEN;
         return this.tasksRepository.save(task);
     }
 
