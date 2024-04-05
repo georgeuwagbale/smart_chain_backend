@@ -7,12 +7,9 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 @Module({
   imports: [
     TypeOrmModule.forRoot({
-      password: 'my_password',
+      url : 'postgresql://postgres:eCyEWRlkeQHVaAErroJpheWnsMaFTMZG@roundhouse.proxy.rlwy.net:17886/railway',
+      host: 'roundhouse.proxy.rlwy.net',
       type: 'postgres',
-      host: 'localhost',
-      port: 5432,
-      username: 'my_user',
-      database: 'my_database',
       entities: ['dist/modules/**/*.entity{.ts,.js}'],
       synchronize: true,
     }),
